@@ -1,5 +1,5 @@
 import { Button, Center, Stack, TextInput } from "@mantine/core";
-import { useWeb3Modal, useWeb3ModalAccount } from "@web3modal/ethers5/react";
+import { useWeb3Modal, useWeb3ModalAccount } from "@web3modal/ethers/react";
 import { FC } from "react";
 
 interface WalletProps {
