@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { isValidAddress } from "./utils";
-import { Alchemy, Network, Nft, OwnedNft } from "alchemy-sdk";
+import { Alchemy, Network, OwnedNft } from "alchemy-sdk";
 
 const alchemy = new Alchemy({
   apiKey: import.meta.env.VITE_ALCHEMY_API_KEY,

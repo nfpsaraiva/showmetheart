@@ -1,6 +1,5 @@
-import { ActionIcon, Anchor, CopyButton, Group, Image, Stack, Text, Tooltip } from "@mantine/core";
+import { Anchor, Group, Image, Stack } from "@mantine/core";
 import { FC } from "react";
-import { IconCheck, IconCopy } from "@tabler/icons-react";
 import { Nft } from "alchemy-sdk";
 
 interface NFTListProps {
