@@ -1,4 +1,4 @@
-import { createWeb3Modal, defaultConfig } from "@web3modal/ethers"
+import { defaultConfig } from "@web3modal/ethers"
 
 // 1. Get projectId
 const projectId = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID
