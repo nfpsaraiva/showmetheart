@@ -10,10 +10,13 @@ const alchemy = new Alchemy({
 const useNfts = (
   address: string,
   manualAddress: string,
+  reset: () => void
 ) => {
   return useQuery({
     queryKey: ["nfts", address, manualAddress],
     queryFn: async () => {
+      reset();
+      
       const userAddress = isValidAddress(address) ? address : (isValidAddress(manualAddress) ? manualAddress : '');
       if (userAddress === "") return [];
 
@@ -39,15 +42,13 @@ const useNftsMetada = (
     queryFn: async () => {
       if (ownedNfts === undefined) return [];
       
-      
       const nfts = [];
       for (let i = 0; i < ownedNfts.length; i++) {
         const { contract, tokenId } = ownedNfts[i];
-        console.log(tokenId);
-
+        
         const metadata = await alchemy.nft.getNftMetadata(contract.address, tokenId);
         increment();
-
+        
         nfts.push(metadata);
       }
 

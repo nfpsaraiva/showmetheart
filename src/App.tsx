@@ -28,6 +28,7 @@ export default function App() {
   } = useNfts(
     address as string,
     manualAddress,
+    handlers.reset
   );
 
   const {

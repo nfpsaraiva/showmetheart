@@ -17,6 +17,7 @@
     "@web3modal/ethers": "^5.0.1",
     "alchemy-sdk": "^3.3.1",
     "ethers": "^6.13.0",
+    "nfpsaraiva-components": "github:nfpsaraiva/nfpsaraiva-components#main",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

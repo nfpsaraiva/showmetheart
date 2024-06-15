@@ -14,8 +14,10 @@ const NFTList: FC<NFTListProps> = ({
     <Group gap={"md"} maw={400} align="center" justify="space-between">
       {
         nfts && nfts.map(nft => {
+          const key = `${nft.contract.address}-${nft.tokenId}`;
+
           return (
-            <Stack maw={100} key={nft.tokenId} gap={2} align='start'>
+            <Stack maw={100} key={key} gap={2} align='start'>
               <Image w={100} src={nft.image.pngUrl} />
               <Anchor size='sm' c={'var(--mantine-color-text)'} target='_blank' href={nft.image.originalUrl}>
                 {nft.name}
