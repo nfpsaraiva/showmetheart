@@ -19,7 +19,7 @@ const Menu: FC<MenuProps> = ({ tokensCount, refetch, isRefetching }: MenuProps) 
   return (
     <>
       <Group justify='space-between' wrap="nowrap">
-        <Burger onClick={toggle} opened={opened} color='orange.5' size={"sm"} />
+        <Burger onClick={toggle} opened={opened} color='violet.5' size={"sm"} />
         {
           tokensCount !== undefined &&
           (

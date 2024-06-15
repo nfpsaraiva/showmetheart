@@ -1,5 +1,5 @@
 import "@mantine/core/styles.css";
-import { Box, Card, Center, Group, Loader, RingProgress, Stack, Text } from "@mantine/core";
+import { Box, Card, Center, RingProgress, Stack, Text } from "@mantine/core";
 import Header from "./features/Header/Header";
 import Wallet from "./features/Wallet/Wallet";
 import { useCounter, useDisclosure } from "@mantine/hooks";
@@ -7,8 +7,8 @@ import { useState } from "react";
 import { createWeb3Modal, useWeb3ModalAccount } from "@web3modal/ethers/react";
 import { ethersConfig, mainnet, projectId } from './walletconnect';
 import { useNfts, useNftsMetada } from "./api";
-import { IconAlertCircle } from "@tabler/icons-react";
 import NFTList from "./features/NFT/NFTList";
+import Menu from "./features/Menu/Menu";
 
 export default function App() {
   const [manualAddress, setManualAddress] = useState('');
@@ -33,6 +33,7 @@ export default function App() {
   const {
     data: nfts,
     isLoading,
+    refetch,
     isRefetching,
     isError
   } = useNftsMetada(
@@ -52,6 +53,7 @@ export default function App() {
               setManualAddress={setManualAddress}
               manualAddressToggle={manualAddressHandle.toggle}
             />
+            <Menu tokensCount={ownedNfts?.length} refetch={refetch} isRefetching={isRefetching} />
           </Stack>
         </Card.Section>
         <Box my={"md"}>

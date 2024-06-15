@@ -39,9 +39,11 @@ const useNftsMetada = (
     queryFn: async () => {
       if (ownedNfts === undefined) return [];
       
+      
       const nfts = [];
       for (let i = 0; i < ownedNfts.length; i++) {
-        const { contract, tokenId } = nfts[i];
+        const { contract, tokenId } = ownedNfts[i];
+        console.log(tokenId);
 
         const metadata = await alchemy.nft.getNftMetadata(contract.address, tokenId);
         increment();

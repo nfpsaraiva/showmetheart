@@ -12,40 +12,20 @@ const NFTList: FC<NFTListProps> = ({
 }: NFTListProps) => {
 
   return (
-    <Stack gap={"md"} maw={400}>
+    <Group gap={"md"} maw={400} align="center" justify="space-between">
       {
         nfts && nfts.map(nft => {
           return (
-            <Group key={nft.tokenId} justify='space-between' gap={"xl"} align='center' wrap='nowrap'>
-              <Group>
-                <Stack gap={2} align='start'>
-                  <Anchor size='sm' c={'var(--mantine-color-text)'} target='_blank' href={nft.image.originalUrl}>
-                    {nft.name}
-                  </Anchor>
-                  <Text size='xs' c={'dimmed'}>{nft.contract.address}</Text>
-                </Stack>
-              </Group>
-              <Group gap={"xs"}>
-                <CopyButton value={nft.contract.address} timeout={2000}>
-                  {({ copied, copy }) => (
-                    <Tooltip label={copied ? 'Copied' : 'Copy contract address'} withArrow position="right">
-                      <ActionIcon color={copied ? 'teal' : 'gray'} variant="subtle" onClick={copy}>
-                        {copied ? (
-                          <IconCheck size={16} />
-                        ) : (
-                          <IconCopy size={16} />
-                        )}
-                      </ActionIcon>
-                    </Tooltip>
-                  )}
-                </CopyButton>
-                <Image w={100} src={nft.image.pngUrl} />
-              </Group>
-            </Group>
+            <Stack maw={100} key={nft.tokenId} gap={2} align='start'>
+              <Image w={100} src={nft.image.pngUrl} />
+              <Anchor size='sm' c={'var(--mantine-color-text)'} target='_blank' href={nft.image.originalUrl}>
+                {nft.name}
+              </Anchor>
+            </Stack>
           )
         })
       }
-    </Stack>
+    </Group>
   )
 }
 
