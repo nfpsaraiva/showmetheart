@@ -54,7 +54,12 @@ export default function App() {
               setManualAddress={setManualAddress}
               manualAddressToggle={manualAddressHandle.toggle}
             />
-            <Menu tokensCount={ownedNfts?.length} refetch={refetch} isRefetching={isRefetching} />
+            <Menu
+              tokensCount={ownedNfts?.length}
+              reset={handlers.reset}
+              refetch={refetch}
+              isRefetching={isRefetching}
+            />
           </Stack>
         </Card.Section>
         <Box my={"md"}>

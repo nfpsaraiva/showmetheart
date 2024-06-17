@@ -13,8 +13,7 @@ const AboutModal: FC<AboutModalProps> = ({
   return (
     <Modal opened={opened} onClose={close} title="About">
       <Text>
-        Streamlined tool designed to help users explore their ERC-20 token holdings.
-        The app lets you check all your current ERC-20 from a given address as well as their current balance.
+        Straightforward and efficient tool designed for users to explore Non-Fungible Tokens (NFTs) on the Ethereum network.
       </Text>
 
     </Modal>
