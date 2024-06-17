@@ -1,4 +1,4 @@
-import { Anchor, Card, Group, Image, Stack, Text } from "@mantine/core";
+import { Card, Group, Image, Stack, Text } from "@mantine/core";
 import { FC } from "react";
 import { Nft } from "alchemy-sdk";
 
