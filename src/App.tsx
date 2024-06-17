@@ -72,7 +72,7 @@ export default function App() {
                   <Text size='xs' ta={"center"}>{count} nfts</Text>
                 }
                 sections={[
-                  { value: (count * 100 / ownedNfts.length), color: 'orange' },
+                  { value: (count * 100 / ownedNfts.length), color: 'violet' },
                 ]}
               />
             </Stack>
